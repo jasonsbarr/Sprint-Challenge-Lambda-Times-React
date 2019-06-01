@@ -28,10 +28,31 @@ Look through the application code. If you have the old Lambda Times (Applied Jav
 
 ## Self-Study/Essay Questions
 
-- [ ] What are PropTypes used for? Please describe why it's important to type check our data in JavaScript.
-- [ ] Describe a life-cycle event in React?
-- [ ] Explain the details of a Higher Order Component?
-- [ ] What are three different ways to style components in React? Explain some of the benefits of each.
+- [x] What are PropTypes used for? Please describe why it's important to type check our data in JavaScript.
+
+Since JavaScript uses dynamic typing and will use type coercion, it's useful to have some way to make sure the data being passed to your components matches with your intention. PropTypes allow you to make sure this is indeed the case so you don't end up with unexpected behavior due to passing an unintended data type into your components.
+
+- [x] Describe a life-cycle event in React?
+
+A lifecycle event is an event that fires at a certain point in the process of loading/mounting, updating, rendering, and unloading/unmounting a React component. You can use these events to call desired functionalities at these specific times to do things like getting data from an API, doing read/write operations on the backend, etc.
+
+- [x] Explain the details of a Higher Order Component?
+
+A Higher Order Component (HOC) is basically a higher order function that takes a component as its argument and then returns another component that contains the component argument as its child in order to give the child component access to additional functionality. HOCs can be used multiple times and provide a concise way of sharing the same functionality with multiple components in your application so you can reuse code instead of repeating it.
+
+- [x] What are three different ways to style components in React? Explain some of the benefits of each.
+
+1. Use imported stylesheets, either with vanilla CSS or a preprocessor. You can import separate stylesheets for each component.
+
+- Benefits: this allows you to write styles in a language you're familiar with and not have to worry about things like scoping styles to components, and you can reuse styles from one stylesheet in another component if you like, e.g. using a global CSS reset in your highest-level stylesheet. If you're using a current version of Create React App you can also use a version of CSS Modules that uniquely prefixes your CSS class definitions so the styles for a component are scoped, preventing style leakage.
+
+2. Define JavaScript objects with style rules and set them as the value to the `style` prop on components.
+
+- Benefits: this lets you scope styles to the specific components and keep your style definitions in the component file itself if you want to, and you can also manipulate the styles with JavaScript and have the full power of JS at your fingertips to work with your styles, going above and beyond what even a preprocessor would do.
+
+3. Use Styled Components or a similar library that lets you define styles in JavaScript but also have the flexibility and syntax that comes with CSS and/or a preprocessor.
+
+- Benefits: all the benefits of #2, but with the added bonus of being able to use CSS syntax to define your styles and easily be able to use pseudo-classes and other features manipulating the `style` prop directly makes more difficult. In the case of the Styled Components library specifically, you can use styles to create HOCs and reuse the components' functionality without having to rewrite it multiple times for parts of the app that need different visual properties.
 
 ## Project Setup
 
